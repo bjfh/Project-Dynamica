@@ -87,7 +87,7 @@ y = y + vy*deltaT;
 //Only the output from every tenth iteration will be sent
 //to the spreadsheet so as to decrease the number of data points.
 if(k%10 == 0){
-pw.print(x + "," + y + "," + vx);
+pw.print(x + "," + y + "," + deltavx + "," + deltavy);
 pw.println();
 pw.flush();
 System.out.println(k + " (iteration) : " + x +  " x pos, " + y + " y pos" );

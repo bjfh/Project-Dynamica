@@ -20,7 +20,7 @@ Tijd = zeros(1,nmax);
 
 %Beide dimensies
 Snelheid = 14;                                      %m*s^-1
-AanvalsHoekXAs = 5;                                 %graden
+AanvalsHoekXAs = 7.5;                                 %graden
 DichtheidLucht = 1.23;                              %kg/m^3
 DiameterFrisbee = 0.28;                              %m
 OppervlakFrisbee = 1/4 * pi * DiameterFrisbee^2;    %m^2
