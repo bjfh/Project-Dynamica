@@ -20,5 +20,10 @@ while ((AfstandY(n-1) > 0) && (n <= nmax))
     
     %Tijd en iteratie
     Tijd(n) = Tijd(n-1) + DeltaTijd;
+    if rem(n, 10) == 0
+        n
+        DeltaSnelheidX
+        DeltaSnelheidY
+    end
     n = n + 1;
 end
