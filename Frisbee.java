@@ -90,7 +90,7 @@ if(k%10 == 0){
 pw.print(x + "," + y + "," + vx);
 pw.println();
 pw.flush();
-System.out.println(k + " (iteration) : " + x +  " x pos, " + y + " y pos" )
+System.out.println(k + " (iteration) : " + x +  " x pos, " + y + " y pos" );
 }
 k++;
 }
