@@ -25,7 +25,7 @@ private static final double RHO = 1.23;
 //The density of air in kg/m^3.
 private static final double AREA = 0.0568;
 //The area of a standard frisbee.
-private static final double CL0 = 0.1;
+private static final double CL0 = 0.15;
 //The lift coefficient at alpha = 0.
 private static final double CLA = 1.4;
 //The lift coefficient dependent on alpha.
@@ -37,7 +37,7 @@ private static final double ALPHA0 = -4;
 public static void main(String []args)
 {
 	Frisbee myFrisbee = new Frisbee();
-	myFrisbee.simulate(1, 14, 0, 5, 0.001);
+	myFrisbee.simulate(1, 14, 0, 7.5, 0.001);
 }
 /**
 * A method that uses Euler’s method to simulate the flight of a frisbee in
