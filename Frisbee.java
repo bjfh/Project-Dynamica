@@ -65,6 +65,7 @@ try{
 //A PrintWriter object to write the output to a spreadsheet.
 PrintWriter pw = new PrintWriter(new BufferedWriter
 (new FileWriter("frisbee.csv")));
+pw.print("x pos" + "," + "y pos" + "," + "deltavx" + "," + "deltavy, lichtcoefficient" );
 //A loop index to monitor the simulation steps.
 int k = 0;
 //A while loop that performs iterations until the y position
@@ -87,7 +88,7 @@ y = y + vy*deltaT;
 //Only the output from every tenth iteration will be sent
 //to the spreadsheet so as to decrease the number of data points.
 if(k%10 == 0){
-pw.print(x + "," + y + "," + deltavx + "," + deltavy);
+pw.print(x + "," + y + "," + deltavx + "," + deltavy + "," + cl );
 pw.println();
 pw.flush();
 System.out.println(k + " (iteration) : " + x +  " x pos, " + y + " y pos" );
