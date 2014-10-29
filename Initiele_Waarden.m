@@ -5,7 +5,7 @@ Massa = 0.175;                                      %kg
 CD0 = 0.08;                                         %1
 CDalpha = 2.72;                                     %1
 Alpha0 = -4;                                        %graden
-CL0 = 0.15;                                         %1
+CL0 = 0.1;                                         %1
 CLalpha = 1.4;                                      %1
 Tijd(n) = 0;                                        %s
 DeltaTijd = 0.001;                                  %s
@@ -24,6 +24,7 @@ AanvalsHoekXAs = 5;                                 %graden
 DichtheidLucht = 1.23;                              %kg/m^3
 DiameterFrisbee = 0.28;                              %m
 OppervlakFrisbee = 1/4 * pi * DiameterFrisbee^2;    %m^2
+
 
 %Dimensie X
 WeerstandCoef = CD0 + CDalpha * ((AanvalsHoekXAs - Alpha0) * pi / 180)^2;%1

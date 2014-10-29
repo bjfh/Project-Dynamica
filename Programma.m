@@ -1,4 +1,5 @@
 clear all;
+close all;
 
 Initiele_Waarden
 Berekening
