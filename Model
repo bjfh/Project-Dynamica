@@ -1,5 +1,6 @@
 clear all;
 
+
 %Iterarie nummer en max
 n = 1;
 nmax = 10000;
@@ -15,7 +16,7 @@ FL = zeros(1,nmax);
 %Constanten
 g = -9.81;
 m = 0.10775;
-alpha = 20;
+alpha = 90;
 y0 = 1;
 vx0 = 14;
 vy0 = 0;
@@ -34,21 +35,17 @@ n = n + 1;
 %Berekening
 while ((y(n-1) > 0) && (n < nmax))
     %De liftkracht met onze gevonden verhouding
-    FL(n-1) = (-0.00029 * alpha^2 + 0.011*alpha - 0.053)*vx(n-1)^2 - 0.1495*vx(n-1) + 0.5361;
+    FL(n-1) = (-0.00029 * alpha ^ 2 + 0.011*alpha - 0.053)*vx(n-1)^2 - 0.1495*vx(n-1) + 0.5361;
     %De zwaartekracht die Newton ooit ontdekte
     Fz = m * g;
     %Dit delen door de massa en maal de deltatijd geeft de verandering in
     %de snelheidY
     deltavy = (FL(n-1) + Fz) / m * deltaT;
     %De luchtweerstand met onze gevonden verhouding
-    Fd = (0.0014 * alpha - 0.0066) * vx(n-1)^2 - 0.0816 * vx(n-1) + 0.4755;
+    Fd = -(0.0014 * alpha - 0.0066) * vx(n-1)^2 - 0.0816 * vx(n-1) + 0.4755;
     %Ook dit delen we door de massa en maal de deltaTijd voor deverandering
     %in de snelheidX
-    if (vx ~= 0)
-        deltavx = -vx(n-1)/abs(vx(n-1)) * Fd / m * deltaT;
-    else
-        deltavx = Fd / m * deltaT;
-    end
+    deltavx = sign(vx(n-1)) * Fd / m * deltaT;
     %Dat kunnen we optellen voor de huidige snelheden
     vx(n) = vx(n-1) + deltavx;
     vy(n) = vy(n-1) + deltavy;
@@ -73,7 +70,7 @@ FL = Fill_Array(FL,n-1);
 
 figure
 plot(x,y,'.')
-axis([0,10000,0,1000])
+axis([0,ceil(max(x)),0,ceil(max(y))])
 title('Grafiek van de afstandY uitgezet tegen de afstandX')
 xlabel('AfstandX(m)')
 ylabel('AfstandY(m)')
