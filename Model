@@ -16,7 +16,7 @@ FL = zeros(1,nmax);
 %Constanten
 g = -9.81;
 m = 0.10775;
-alpha = 90;
+alpha = 10;
 y0 = 1;
 vx0 = 14;
 vy0 = 0;
@@ -74,9 +74,3 @@ axis([0,ceil(max(x)),0,ceil(max(y))])
 title('Grafiek van de afstandY uitgezet tegen de afstandX')
 xlabel('AfstandX(m)')
 ylabel('AfstandY(m)')
-
-figure
-plot(vx,FL,'.')
-title('Grafiek van de Liftkracht uitgezet tegen de SnelheidX')
-xlabel('SnelheidX (m/s)')
-ylabel('Liftkracht (N)')
